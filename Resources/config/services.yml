@@ -1,0 +1,43 @@
+parameters:
+    gsf_core.routing_annotationgsfloaderdir_class:   GollumSF\CoreBundle\Routing\AnnotationGSFLoaderDir
+    gsf_core.routing_annotationgsfloaderfile_class:  GollumSF\CoreBundle\Routing\AnnotationGSFLoaderFile
+    gsf_core.routing_annotationgsfloaderclass_class: GollumSF\CoreBundle\Routing\AnnotationGSFLoaderClass
+    gsf_core.routing_annotation_tag: gsf_annotation
+
+services:
+    
+    ###########
+    # Routing #
+    ###########
+    
+    gsf_core.routing.annotation_gsf_loader_dir:
+        class: "%gsf_core.routing_annotationgsfloaderdir_class%"
+        arguments: 
+            - "@file_locator"
+            - "@gsf_core.routing.annotation_gsf_loader_class"
+            - "%gsf_core.routing_annotation_tag%"
+        methods:
+            - [ setAnnotationTag, [ "%gsf_core.routing_annotation_tag%" ] ]
+        tags:
+            - { name: routing.loader }
+        public: false
+    
+    gsf_core.routing.annotation_gsf_loader_file:
+        class: "%gsf_core.routing_annotationgsfloaderfile_class%"
+        arguments:
+            - "@file_locator"
+            - "@gsf_core.routing.annotation_gsf_loader_class"
+            - "%gsf_core.routing_annotation_tag%"
+        tags:
+            - { name: routing.loader }
+        public: false
+        
+    gsf_core.routing.annotation_gsf_loader_class:
+        class: "%gsf_core.routing_annotationgsfloaderclass_class%"
+        arguments:
+            - "@annotation_reader"
+            - "@event_dispatcher"
+            - "%gsf_core.routing_annotation_tag%"
+        tags:
+            - { name: routing.loader }
+        public: false
