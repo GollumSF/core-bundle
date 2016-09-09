@@ -12,8 +12,7 @@ use Symfony\Component\Form\Form;
 abstract class CoreAbstractController extends Controller{
 	
 	public function formDescribe(Form $form) {
-		// TODO Stub
-		return [];
+		return $form->createView();
 	}
 	
 	public function formErrors(Form $form) {
