@@ -1,6 +1,13 @@
+#GollumSFCoreBundle
 
-Event on create route
-=
+[![Build Status](https://travis-ci.org/GollumSF/core-bundle.svg?branch=master)](https://travis-ci.org/GollumSF/core-bundle)
+[![License](https://poser.pugx.org/gollumsf/core-bundle/license)](https://packagist.org/packages/gollumsf/core-bundle)
+[![Latest Stable Version](https://poser.pugx.org/gollumsf/core-bundle/v/stable)](https://packagist.org/packages/gollumsf/core-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/gollumsf/core-bundle/v/unstable)](https://packagist.org/packages/gollumsf/core-bundle)
+
+
+##Event on create route
+
 
 ```php
 <?php
@@ -27,8 +34,8 @@ services:
 ```
 
 
-Change routing annotation tag
-=
+##Change routing annotation tag
+
 
 ```yml
 parameters:
