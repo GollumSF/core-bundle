@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 /**
  * AbstractWebTestCase
  *
- * @author Damien Duboeuf <damien@swabbl.com>
+ * @author Damien Duboeuf <smeagolworms4@gmail.com>
  */
 abstract class AbstractWebTestCase extends WebTestCase {
 	
